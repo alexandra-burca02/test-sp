@@ -1,15 +1,11 @@
 package com.example.demo;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 class ObjectMapperSingleton {
-    private static ObjectMapper instance;
-    private ObjectMapperSingleton() {
-    }
+    private static final ObjectMapper INSTANCE = new ObjectMapper();
+    private ObjectMapperSingleton() {}
+
     public static ObjectMapper getInstance() {
-        if (instance == null) {
-            instance = new ObjectMapper();
-        }
-        return instance;
+        return INSTANCE;
     }
 }
